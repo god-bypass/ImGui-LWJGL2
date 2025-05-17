@@ -35,6 +35,11 @@ jobs:
 
     - name: Build with Gradle Wrapper
       run: ./gradlew build
+    - name: Upload JAR if it exists
+      uses: actions/upload-artifact@v4
+      with:
+        name: imgui
+        path: build/libs/*.jar
 
     #- name: ShadowJar with Gradle Wrapper
     #  run: ./gradlew shadowJar
